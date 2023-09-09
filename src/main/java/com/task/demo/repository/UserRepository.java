@@ -8,4 +8,5 @@ import com.task.demo.entity.UserEntity;
 @Repository
 public interface UserRepository extends CrudRepository<UserEntity, Integer> {
 
+	UserEntity findByUsernameAndPassword(String username, String password);
 }

@@ -2,6 +2,8 @@ package com.task.demo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -21,8 +23,8 @@ public class UserController {
 	
 	@PostMapping
 	public ResponseEntity<User> create(@RequestBody User user) {
-		var savedUser = userService.createOrUpdateUser(user);
-		return ResponseEntity.ok(savedUser);
+			var savedUser = userService.createOrUpdateUser(user);
+			return ResponseEntity.ok(savedUser);
 	}
 	
 	@PutMapping("/{userId}")
@@ -31,6 +33,16 @@ public class UserController {
 		var savedUser = userService.createOrUpdateUser(user);
 		return ResponseEntity.ok(savedUser);
 	}
-
-
+	
+    @GetMapping("/{userId}")
+	public ResponseEntity<User> get(@PathVariable("userId") Integer userId) {
+		var user = userService.getUser(userId);
+		return ResponseEntity.ok(user);
+    }
+    
+    @DeleteMapping("/{userId}")
+    public ResponseEntity<String> delete(@PathVariable("userId") Integer userId) {
+		userService.deleteUser(userId);
+		return ResponseEntity.ok("Successfully deleted");
+    }
 }
