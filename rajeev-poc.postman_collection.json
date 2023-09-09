@@ -1,0 +1,67 @@
+{
+	"info": {
+		"_postman_id": "01b5598d-e3ca-4d7c-b7df-a09734233420",
+		"name": "rajeev-poc",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8506223"
+	},
+	"item": [
+		{
+			"name": "create user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"rajeev.yadav\",\r\n    \"password\":\"test@123\",\r\n    \"email\":\"rajeev@gmail.com\",\r\n    \"phoneNo\":\"676634435\",\r\n    \"address\":\"lal kuan\",\r\n    \"zipcode\":\"201002\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update user",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"test.com\",\r\n    \"password\":\"hello@123\",\r\n    \"email\":\"test@gmail.com\",\r\n    \"phoneNo\":\"1334343\",\r\n    \"address\":\"ghaziabad\",\r\n    \"zipcode\":\"223245\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/users/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
